@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="1st maven homework" />
+        <module name="Palindrome Validator" />
       </profile>
     </annotationProcessing>
   </component>
