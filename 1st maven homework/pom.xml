@@ -65,7 +65,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Application</mainClass>
+                            <mainClass>hu.ak_academy.spring.webdevelopment.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
