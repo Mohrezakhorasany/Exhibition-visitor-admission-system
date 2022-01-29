@@ -12,7 +12,9 @@ public class PalindromeValidator implements ConstraintValidator<Palindrome, Coll
     @Override
     public boolean isValid(Collection<String> strings, ConstraintValidatorContext constraintValidatorContext) {
         for (String s : strings) {
-            return isPalindrome(s);
+            if (!isPalindrome(s)) {
+                return false;
+            }
         }
         return true;
     }
