@@ -26,10 +26,20 @@ class PalindromeValidatorTest {
 
     @Test
     void isAllWordsPalindrome() {
-        final List<String> words = Arrays.asList("Anna", "civic", "kayak", "level", "madam", "mom", "noon", "racecar", "radar", "redder", "refer", "bus");
+        final List<String> words = Arrays.asList("Anna", "civic", "kayak", "level", "madam", "mom", "noon", "racecar", "radar", "redder", "refer");
         final Palindrome palindrome = new Palindrome(words);
         final Set<ConstraintViolation<Palindrome>> violations = validator.validate(palindrome);
         Assertions.assertThat(violations).isEmpty();
+        final ConstraintViolation<Palindrome> violation = violations.iterator().next();
+        Assertions.assertThat(violation.getMessage()).isEqualTo("List of '%s' contained elements which are not palindrome".formatted(words));
+    }
+
+    @Test
+    void shouldReturnViolation_whenCollectionContainsNotPalindromeWords() {
+        final List<String> words = Arrays.asList("Anna", "civic", "kayak", "level", "madam", "mom", "noon", "racecar", "radar", "redder", "refer", "bus");
+        final Palindrome palindrome = new Palindrome(words);
+        final Set<ConstraintViolation<Palindrome>> violations = validator.validate(palindrome);
+        Assertions.assertThat(violations).hasSize(1);
         final ConstraintViolation<Palindrome> violation = violations.iterator().next();
         Assertions.assertThat(violation.getMessage()).isEqualTo("List of '%s' contained elements which are not palindrome".formatted(words));
     }
