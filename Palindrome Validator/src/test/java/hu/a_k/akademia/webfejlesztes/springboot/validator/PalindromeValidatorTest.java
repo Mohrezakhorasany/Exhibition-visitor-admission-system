@@ -4,7 +4,6 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
-import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -26,27 +25,20 @@ class PalindromeValidatorTest {
 
     @Test
     void isAllWordsPalindrome() {
+        record TestClass(@Palindrome  List<String> Words) {}
         final List<String> words = Arrays.asList("Anna", "civic", "kayak", "level", "madam", "mom", "noon", "racecar", "radar", "redder", "refer");
-        final Palindrome palindrome = new Palindrome(words);
-        final Set<ConstraintViolation<Palindrome>> violations = validator.validate(palindrome);
+        final Set<ConstraintViolation<TestClass>> violations = validator.validate(new TestClass(words));
         Assertions.assertThat(violations).isEmpty();
-        final ConstraintViolation<Palindrome> violation = violations.iterator().next();
-        Assertions.assertThat(violation.getMessage()).isEqualTo("List of '%s' contained elements which are not palindrome".formatted(words));
     }
 
     @Test
     void shouldReturnViolation_whenCollectionContainsNotPalindromeWords() {
+        record TestClass(@hu.a_k.akademia.webfejlesztes.springboot.validator.Palindrome List<String> words) {
+        }
         final List<String> words = Arrays.asList("Anna", "civic", "kayak", "level", "madam", "mom", "noon", "racecar", "radar", "redder", "refer", "bus");
-        final Palindrome palindrome = new Palindrome(words);
-        final Set<ConstraintViolation<Palindrome>> violations = validator.validate(palindrome);
+        final Set<ConstraintViolation<TestClass>> violations = validator.validate(new TestClass(words));
         Assertions.assertThat(violations).hasSize(1);
-        final ConstraintViolation<Palindrome> violation = violations.iterator().next();
+        final ConstraintViolation<TestClass> violation = violations.iterator().next();
         Assertions.assertThat(violation.getMessage()).isEqualTo("List of '%s' contained elements which are not palindrome".formatted(words));
-    }
-
-    @RequiredArgsConstructor
-    private static final class Palindrome {
-        @hu.a_k.akademia.webfejlesztes.springboot.validator.Palindrome
-        private final List<String> words;
     }
 }

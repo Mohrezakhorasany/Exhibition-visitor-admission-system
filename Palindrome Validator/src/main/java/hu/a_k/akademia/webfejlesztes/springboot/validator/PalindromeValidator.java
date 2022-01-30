@@ -20,6 +20,6 @@ public class PalindromeValidator implements ConstraintValidator<Palindrome, Coll
     }
 
     private boolean isPalindrome(String s) {
-        return IntStream.range(0, s.length() / 2).noneMatch(i -> s.charAt(i) != s.charAt(s.length() - i - 1));
+        return IntStream.range(0, s.length() / 2).noneMatch(i -> Character.toLowerCase( s.charAt(i)) != Character.toLowerCase(s.charAt(s.length() - i - 1)));
     }
 }
