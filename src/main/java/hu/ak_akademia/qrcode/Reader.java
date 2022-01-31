@@ -1,4 +1,4 @@
-package hu.ak_akademia.qr_code;
+package hu.ak_akademia.qrcode;
 
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.MultiFormatReader;
