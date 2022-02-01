@@ -7,9 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="1st maven homework" />
+        <module name="test-application" />
         <module name="Palindrome Validator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="1st maven homework" target="17" />
+      <module name="parent-pom" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
