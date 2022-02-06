@@ -70,6 +70,7 @@
         <module>3rd_homework/Bean creation</module>
         <module>3rd_homework/Spring bean management</module>
         <module>3rd_homework/Spring autowiring</module>
+        <module>3rd_homework/Spring bean lifecycle</module>
     </modules>
 
 </project>

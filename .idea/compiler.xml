@@ -12,6 +12,7 @@
         <module name="Spring bean management" />
         <module name="test-application" />
         <module name="Spring autowiring" />
+        <module name="Spring bean lifecycle" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
