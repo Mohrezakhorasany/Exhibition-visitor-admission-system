@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="test-application" />
         <module name="Bean Creation" />
         <module name="Palindrome Validator" />
+        <module name="Spring bean management" />
+        <module name="test-application" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

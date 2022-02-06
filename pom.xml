@@ -68,6 +68,7 @@
         <module>1st_homework/1st maven homework</module>
         <module>2nd_homework/Palindrome Validator</module>
         <module>3rd_homework/Bean creation</module>
+        <module>3rd_homework/Spring bean management</module>
     </modules>
 
 </project>
