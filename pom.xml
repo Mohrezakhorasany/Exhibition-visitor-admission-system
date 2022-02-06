@@ -18,15 +18,11 @@
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
         <junit-jupiter-api.version>5.7.2</junit-jupiter-api.version>
         <lombok.version>1.18.22</lombok.version>
+        <spring-context.version>5.3.9</spring-context.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>5.3.9</version>
-            </dependency>
             <dependency>
                 <groupId>jakarta.validation</groupId>
                 <artifactId>jakarta.validation-api</artifactId>
@@ -50,6 +46,11 @@
                 <version>${lombok.version}</version>
                 <optional>true</optional>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-context.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -66,6 +67,7 @@
     <modules>
         <module>1st_homework/1st maven homework</module>
         <module>2nd_homework/Palindrome Validator</module>
+        <module>3rd_homework/Bean creation</module>
     </modules>
 
 </project>
