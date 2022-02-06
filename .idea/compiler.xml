@@ -11,6 +11,7 @@
         <module name="Palindrome Validator" />
         <module name="Spring bean management" />
         <module name="test-application" />
+        <module name="Spring autowiring" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

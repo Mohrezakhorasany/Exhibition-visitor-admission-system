@@ -2,8 +2,7 @@ package hu.a_k.akademia.webfejlesztes.springboot;
 
 import hu.a_k.akademia.webfejlesztes.springboot.dal.AdminRepositoryImpl;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;
-import hu.a_k.akademia.webfejlesztes.springboot.service.AdminServiceImpl;
-import hu.a_k.akademia.webfejlesztes.springboot.service.api.AdminService;
+import hu.a_k.akademia.webfejlesztes.springboot.api.AdminService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

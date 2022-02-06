@@ -1,8 +1,8 @@
-package hu.a_k.akademia.webfejlesztes.springboot.service;
+package hu.a_k.akademia.webfejlesztes.springboot;
 
+import hu.a_k.akademia.webfejlesztes.springboot.api.ManagerService;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.ManagerRepositoryImpl;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.Manager;
-import hu.a_k.akademia.webfejlesztes.springboot.service.api.ManagerService;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 

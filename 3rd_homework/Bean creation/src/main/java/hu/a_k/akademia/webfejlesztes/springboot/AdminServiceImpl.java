@@ -1,8 +1,8 @@
-package hu.a_k.akademia.webfejlesztes.springboot.service;
+package hu.a_k.akademia.webfejlesztes.springboot;
 
+import hu.a_k.akademia.webfejlesztes.springboot.api.AdminService;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.Admin;
-import hu.a_k.akademia.webfejlesztes.springboot.service.api.AdminService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

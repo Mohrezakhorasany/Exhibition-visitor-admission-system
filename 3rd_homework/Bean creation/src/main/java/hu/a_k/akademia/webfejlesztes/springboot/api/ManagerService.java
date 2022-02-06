@@ -1,4 +1,4 @@
-package hu.a_k.akademia.webfejlesztes.springboot.service.api;
+package hu.a_k.akademia.webfejlesztes.springboot.api;
 
 import hu.a_k.akademia.webfejlesztes.springboot.domain.Manager;
 

@@ -1,6 +1,6 @@
 package hu.a_k.akademia.webfejlesztes.springboot;
 
-import hu.a_k.akademia.webfejlesztes.springboot.service.api.ManagerService;
+import hu.a_k.akademia.webfejlesztes.springboot.api.ManagerService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {

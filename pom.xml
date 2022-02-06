@@ -69,6 +69,7 @@
         <module>2nd_homework/Palindrome Validator</module>
         <module>3rd_homework/Bean creation</module>
         <module>3rd_homework/Spring bean management</module>
+        <module>3rd_homework/Spring autowiring</module>
     </modules>
 
 </project>
