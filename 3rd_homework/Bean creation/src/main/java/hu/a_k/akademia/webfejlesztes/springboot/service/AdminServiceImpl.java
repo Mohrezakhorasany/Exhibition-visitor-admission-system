@@ -1,4 +1,4 @@
-package hu.a_k.akademia.webfejlesztes.springboot;
+package hu.a_k.akademia.webfejlesztes.springboot.service;
 
 import hu.a_k.akademia.webfejlesztes.springboot.api.AdminService;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;

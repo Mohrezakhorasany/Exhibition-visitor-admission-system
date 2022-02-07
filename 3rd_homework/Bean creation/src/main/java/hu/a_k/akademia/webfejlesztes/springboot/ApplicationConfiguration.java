@@ -1,8 +1,13 @@
 package hu.a_k.akademia.webfejlesztes.springboot;
 
-import hu.a_k.akademia.webfejlesztes.springboot.dal.AdminRepositoryImpl;
-import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;
 import hu.a_k.akademia.webfejlesztes.springboot.api.AdminService;
+import hu.a_k.akademia.webfejlesztes.springboot.api.ManagerService;
+import hu.a_k.akademia.webfejlesztes.springboot.dal.AdminRepositoryImpl;
+import hu.a_k.akademia.webfejlesztes.springboot.dal.ManagerRepositoryImpl;
+import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;
+import hu.a_k.akademia.webfejlesztes.springboot.dal.api.ManagerRepository;
+import hu.a_k.akademia.webfejlesztes.springboot.service.AdminServiceImpl;
+import hu.a_k.akademia.webfejlesztes.springboot.service.ManagerServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,15 +29,14 @@ public class ApplicationConfiguration {
         return adminService;
     }
 
-//    @Bean(name = "managerRepository")
-//    public ManagerRepository getManagerRepository() {
-//        return new ManagerRepositoryImpl();
-//    }
-//
-//    @Bean(name = "managerService")
-//    public ManagerService getManagerService() {
-//        final ManagerServiceImpl managerService = new ManagerServiceImpl();
-//        managerService.setManagerRepository(getManagerRepository());
-//        return managerService;
-//    }
+    @Bean(name = "managerRepository")
+    public ManagerRepository getManagerRepository() {
+        return new ManagerRepositoryImpl();
+    }
+
+    @Bean(name = "managerService")
+    public ManagerService getManagerService() {
+        final ManagerServiceImpl managerService = new ManagerServiceImpl();
+        return managerService;
+    }
 }

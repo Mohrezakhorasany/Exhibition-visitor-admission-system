@@ -2,10 +2,11 @@ package hu.a_k.akademia.webfejlesztes.springboot.dal;
 
 import hu.a_k.akademia.webfejlesztes.springboot.dal.api.ManagerRepository;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.Manager;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+@Repository
 public class ManagerRepositoryImpl implements ManagerRepository {
 
     @Override
