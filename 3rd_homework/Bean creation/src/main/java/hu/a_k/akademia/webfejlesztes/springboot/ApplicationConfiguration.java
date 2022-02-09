@@ -3,9 +3,8 @@ package hu.a_k.akademia.webfejlesztes.springboot;
 import hu.a_k.akademia.webfejlesztes.springboot.api.AdminService;
 import hu.a_k.akademia.webfejlesztes.springboot.api.ManagerService;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.AdminRepositoryImpl;
-import hu.a_k.akademia.webfejlesztes.springboot.dal.ManagerRepositoryImpl;
+import hu.a_k.akademia.webfejlesztes.springboot.dal.ManagerRepository;
 import hu.a_k.akademia.webfejlesztes.springboot.dal.api.AdminRepository;
-import hu.a_k.akademia.webfejlesztes.springboot.dal.api.ManagerRepository;
 import hu.a_k.akademia.webfejlesztes.springboot.service.AdminServiceImpl;
 import hu.a_k.akademia.webfejlesztes.springboot.service.ManagerServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -30,8 +29,8 @@ public class ApplicationConfiguration {
     }
 
     @Bean(name = "managerRepository")
-    public ManagerRepository getManagerRepository() {
-        return new ManagerRepositoryImpl();
+    public hu.a_k.akademia.webfejlesztes.springboot.dal.api.ManagerRepository getManagerRepository() {
+        return new ManagerRepository();
     }
 
     @Bean(name = "managerService")
