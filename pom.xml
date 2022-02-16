@@ -19,10 +19,16 @@
         <junit-jupiter-api.version>5.7.2</junit-jupiter-api.version>
         <lombok.version>1.18.22</lombok.version>
         <spring-context.version>5.3.9</spring-context.version>
+        <postgresql.version>42.3.1</postgresql.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
             <dependency>
                 <groupId>jakarta.validation</groupId>
                 <artifactId>jakarta.validation-api</artifactId>
@@ -71,6 +77,7 @@
         <module>3rd_homework/Spring bean management</module>
         <module>3rd_homework/Spring autowiring</module>
         <module>3rd_homework/Spring bean lifecycle</module>
+        <module>4th_homework/Spring Access Data JDBC</module>
     </modules>
 
 </project>
