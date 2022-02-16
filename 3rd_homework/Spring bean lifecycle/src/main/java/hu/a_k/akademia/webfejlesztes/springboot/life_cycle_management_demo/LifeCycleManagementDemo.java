@@ -36,6 +36,7 @@ public class LifeCycleManagementDemo implements InitializingBean, DisposableBean
         System.out.println("Destroy  " + LocalTime.now());
     }
 
+
     public void destroyMethod() {
         System.out.println(" Destroy method " + LocalTime.now());
     }
