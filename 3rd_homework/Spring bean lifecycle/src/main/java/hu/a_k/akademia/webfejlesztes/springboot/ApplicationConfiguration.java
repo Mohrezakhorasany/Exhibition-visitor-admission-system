@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "hu.a_k.akademia.webfejlesztes.springboot")
 public class ApplicationConfiguration {
 
-    @Bean(initMethod = "init", destroyMethod = "destroy")
+    @Bean(initMethod = "init", destroyMethod = "destroyMethod")
     public LifeCycleManagementDemo lifeCycleManagementDemo(){
         return new LifeCycleManagementDemo();
     }
