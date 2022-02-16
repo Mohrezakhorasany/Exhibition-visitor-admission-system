@@ -9,6 +9,7 @@ public class Application {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
         LifeCycleManagementDemo bean = context.getBean(LifeCycleManagementDemo.class);
         System.out.println(bean);
+        context.close();
 
     }
 
