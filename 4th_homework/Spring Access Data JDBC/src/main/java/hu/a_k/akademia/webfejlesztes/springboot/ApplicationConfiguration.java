@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan
+@ComponentScan("hu.a_k.akademia.webfejlesztes.springboot.repository")
 @PropertySource(value = "classpath:application.yaml", factory = YamlPropertySourceFactory.class)
 @EnableTransactionManagement
 public class ApplicationConfiguration {
