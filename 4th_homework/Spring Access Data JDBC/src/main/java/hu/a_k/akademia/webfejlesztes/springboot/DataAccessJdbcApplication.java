@@ -5,7 +5,6 @@ import hu.a_k.akademia.webfejlesztes.springboot.repository.api.CarRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.sql.Date;
-import java.util.Calendar;
 
 public class DataAccessJdbcApplication {
 
@@ -19,8 +18,8 @@ public class DataAccessJdbcApplication {
                 .builder()
                 .withBrand("Fiat")
                 .withModel("Doblo")
-                .withFuel_type("Benzin")
-                .withManufacturing_date(new Date(Calendar.getInstance().getTime().getTime()))
+                .withFuelType("Benzin")
+                .withManufacturingDate(new Date(System.currentTimeMillis()))
                 .withColor("Blue").build());
 
         carRepository.findByRegID(1).ifPresent(System.out::println);
@@ -29,8 +28,8 @@ public class DataAccessJdbcApplication {
                 .builder()
                 .withBrand("Fiat")
                 .withModel("Tipo")
-                .withFuel_type("Diesel")
-                .withManufacturing_date(new Date(Calendar.getInstance().getTime().getTime()))
+                .withFuelType("Diesel")
+                .withManufacturingDate(new Date(System.currentTimeMillis()))
                 .withColor("Black").build();
 
         carRepository.save(fiat_tipo);

@@ -1,13 +1,14 @@
-CREATE SCHEMA IF NOT EXISTS factory;
+create schema if not exists factory;
 
-CREATE TABLE IF NOT EXISTS factory.car
+
+create table if not exists factory.car
 (
-    registration_id SERIAL PRIMARY KEY,
-    car_brand VARCHAR(255) NOT NULL,
-    car_model VARCHAR(255) NOT NULL,
-    fuel_type VARCHAR(255) NOT NULL,
-    manufacturing_date DATE NOT NULL,
-    car_color VARCHAR(255) NOT NULL
+    registration_id serial primary key not null unique,
+    car_brand varchar(255) not null,
+    car_model varchar(255) not null,
+    fuel_type varchar(255) not null,
+    manufacturing_date date not null,
+    car_color varchar(255) not null
 );
 
-truncate table factory.car RESTART IDENTITY CASCADE;
+TRUNCATE TABLE factory.car RESTART IDENTITY;

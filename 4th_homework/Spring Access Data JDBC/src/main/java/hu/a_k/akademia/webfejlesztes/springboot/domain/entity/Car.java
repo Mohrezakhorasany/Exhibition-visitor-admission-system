@@ -12,10 +12,10 @@ import java.sql.Date;
 @AllArgsConstructor
 @Builder(setterPrefix = "with")
 public class Car {
-    private Integer registration_id;
+    private Integer registrationId;
     private String brand;
     private String model;
-    private String fuel_type;
-    private Date manufacturing_date;
+    private String fuelType;
+    private Date manufacturingDate;
     private String color;
 }
