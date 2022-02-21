@@ -13,7 +13,7 @@ public class LifeCycleManagementDemo implements InitializingBean, DisposableBean
     }
 
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         System.out.println("PostConstruct " + LocalTime.now());
     }
 
@@ -22,12 +22,12 @@ public class LifeCycleManagementDemo implements InitializingBean, DisposableBean
         System.out.println("Initializing Bean  " + LocalTime.now());
     }
 
-    public void init(){
+    public void init() {
         System.out.println("init Method  " + LocalTime.now());
     }
 
     @PreDestroy
-    public void preDestroy(){
+    public void preDestroy() {
         System.out.println("PreDestroy " + LocalTime.now());
     }
 
@@ -41,8 +41,4 @@ public class LifeCycleManagementDemo implements InitializingBean, DisposableBean
         System.out.println("Destroy method " + LocalTime.now());
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Finalize " + LocalTime.now());
-    }
 }
