@@ -71,8 +71,13 @@ public class CarRepositoryImpl implements hu.a_k.akademia.webfejlesztes.springbo
 
     @Override
     public boolean delete(int id) {
-        return namedParameterJdbcTemplate.update("""
-                DELETE FROM factory.car WHERE registration_id = :registration_id
-                """, new MapSqlParameterSource("registration_id", id)) != 0;
+        final int deletedRow = namedParameterJdbcTemplate.update("""
+                        DELETE FROM factory.car WHERE registration_id = :registration_id
+                        """,
+                new BeanPropertySqlParameterSource(Car.builder()
+                        .withRegistration_id(id)
+                        .build())
+        );
+        return deletedRow != 0;
     }
 }
