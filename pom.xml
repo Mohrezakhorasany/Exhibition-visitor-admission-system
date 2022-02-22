@@ -14,11 +14,14 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <assertj-core.version>3.8.0</assertj-core.version>
+        <assertj-core.version>3.22.0</assertj-core.version>
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
         <junit-jupiter-api.version>5.7.2</junit-jupiter-api.version>
         <lombok.version>1.18.22</lombok.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <slf4j-api.version>1.7.32</slf4j-api.version>
         <spring-context.version>5.3.9</spring-context.version>
+        <slf4j-simple.version>1.7.32</slf4j-simple.version>
         <postgresql.version>42.3.1</postgresql.version>
     </properties>
 
@@ -78,6 +81,7 @@
         <module>3rd_homework/Spring autowiring</module>
         <module>3rd_homework/Spring bean lifecycle</module>
         <module>4th_homework/Spring Access Data JDBC</module>
+        <module>5th_homework/Spring Boot REST endpoints</module>
     </modules>
 
 </project>
