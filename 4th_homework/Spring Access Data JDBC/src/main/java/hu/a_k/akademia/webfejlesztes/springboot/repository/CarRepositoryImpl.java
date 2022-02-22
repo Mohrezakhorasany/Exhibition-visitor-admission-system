@@ -3,6 +3,7 @@ package hu.a_k.akademia.webfejlesztes.springboot.repository;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.entity.Car;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.exception.EntityAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -32,7 +33,7 @@ public class CarRepositoryImpl implements hu.a_k.akademia.webfejlesztes.springbo
                     .addValue("fuel_type", car.getFuelType())
                     .addValue("manufacturing_date", car.getManufacturingDate())
                     .addValue("car_color", car.getColor()));
-        } catch (final Exception e) {
+        } catch (final DuplicateKeyException e) {
             throw new EntityAlreadyExistsException("Car already exits", e);
         }
     }
