@@ -16,12 +16,13 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 class CarRepositoryImplTest {
 
     private EmbeddedDatabase embeddedDatabase;
     private CarRepository objectUnderTest;
-    private final Date currentDate = Date.valueOf(new Date(new java.util.Date().getTime()).toLocalDate());
+    private final Date currentDate = Date.valueOf(LocalDate.now());
 
 
     @BeforeEach
