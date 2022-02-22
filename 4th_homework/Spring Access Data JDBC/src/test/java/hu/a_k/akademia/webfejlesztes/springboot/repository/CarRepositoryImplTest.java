@@ -8,12 +8,12 @@ import org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.yaml.snakeyaml.constructor.DuplicateKeyException;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -66,7 +66,6 @@ class CarRepositoryImplTest {
     @Test
     void shouldThrowEntityAlreadyExistsException_whenSaveTwoCarsWithSameBrandModel() {
         objectUnderTest.save(Car.builder()
-                .withRegistrationId(3)
                 .withBrand("BMW")
                 .withModel("i4")
                 .withFuelType("Benzine")
@@ -76,7 +75,6 @@ class CarRepositoryImplTest {
 
         Assertions.assertThatThrownBy(() -> objectUnderTest.save(
                         Car.builder()
-                                .withRegistrationId(3)
                                 .withBrand("BMW")
                                 .withModel("i4")
                                 .withFuelType("Benzine")

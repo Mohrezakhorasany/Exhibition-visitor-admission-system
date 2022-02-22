@@ -2,6 +2,7 @@ package hu.a_k.akademia.webfejlesztes.springboot.repository;
 
 import hu.a_k.akademia.webfejlesztes.springboot.domain.entity.Car;
 import hu.a_k.akademia.webfejlesztes.springboot.domain.exception.EntityAlreadyExistsException;
+import hu.a_k.akademia.webfejlesztes.springboot.repository.api.CarRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -12,10 +13,11 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import java.util.Map;
 import java.util.Optional;
 
 @Repository
-public class CarRepositoryImpl implements hu.a_k.akademia.webfejlesztes.springboot.repository.api.CarRepository {
+public class CarRepositoryImpl implements CarRepository {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private final SimpleJdbcInsert simpleJdbcInsert;
 
@@ -68,7 +70,6 @@ public class CarRepositoryImpl implements hu.a_k.akademia.webfejlesztes.springbo
                         WHERE registration_id = :registrationId
                         """,
                 new BeanPropertySqlParameterSource(Car.builder()
-                        .withRegistrationId(id)
                         .withColor(color)
                         .build())
         );
@@ -76,13 +77,12 @@ public class CarRepositoryImpl implements hu.a_k.akademia.webfejlesztes.springbo
     }
 
     @Override
-    public boolean delete(int id) {
+    public boolean delete(final Integer id) {
         final int deletedRow = namedParameterJdbcTemplate.update("""
-                        DELETE FROM factory.car WHERE registration_id = :registrationId
+                        DELETE FROM factory.car
+                        WHERE registration_id = :registrationId
                         """,
-                new BeanPropertySqlParameterSource(Car.builder()
-                        .withRegistrationId(id)
-                        .build())
+                Map.of("registrationId", id)
         );
         return deletedRow != 0;
     }

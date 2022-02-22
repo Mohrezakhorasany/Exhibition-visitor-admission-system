@@ -12,7 +12,6 @@ import java.sql.Date;
 @AllArgsConstructor
 @Builder(setterPrefix = "with")
 public class Car {
-    private Integer registrationId;
     private String brand;
     private String model;
     private String fuelType;

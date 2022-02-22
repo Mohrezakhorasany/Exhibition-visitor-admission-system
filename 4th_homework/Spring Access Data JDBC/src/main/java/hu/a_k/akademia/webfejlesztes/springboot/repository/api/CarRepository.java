@@ -11,5 +11,5 @@ public interface CarRepository {
 
     boolean setColor(Integer id, String color);
 
-    boolean delete(int id);
+    boolean delete(final Integer id);
 }
