@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,6 +30,14 @@ public class AnimalControllerImpl implements AnimalController {
                 .fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(newAnimalId).toUri()).build();
+    }
+
+    @Override
+    public ResponseEntity<List<AnimalOutputDto>> fetchAll() {
+        return ResponseEntity.ok(animalService.fetchAll()
+                .stream()
+                .map(AnimalOutputDto::new)
+                .toList());
     }
 
     @Override

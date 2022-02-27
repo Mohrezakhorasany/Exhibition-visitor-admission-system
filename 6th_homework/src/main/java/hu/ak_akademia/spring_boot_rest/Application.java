@@ -43,7 +43,7 @@ public class Application {
     }
 
     @Bean
-    public SimpleJdbcInsert simpleJdbcInsertPerson(final DataSource dataSource) {
+    public SimpleJdbcInsert simpleJdbcInsertAnimal(final DataSource dataSource) {
         return new SimpleJdbcInsert(dataSource)
                 .withSchemaName("zoo")
                 .withTableName("animal")

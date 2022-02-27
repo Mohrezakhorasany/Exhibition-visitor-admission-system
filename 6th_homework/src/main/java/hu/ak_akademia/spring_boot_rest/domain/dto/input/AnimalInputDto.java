@@ -4,13 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
 public class AnimalInputDto {
-    @Positive
-    private Integer id;
+
     @NotBlank
     @NotNull
     private String name;

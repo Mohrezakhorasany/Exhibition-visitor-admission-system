@@ -7,16 +7,18 @@ import hu.ak_akademia.spring_boot_rest.domain.exception.EntityNotFoundException;
 import hu.ak_akademia.spring_boot_rest.domain.exception.InputValidationException;
 import hu.ak_akademia.spring_boot_rest.domain.exception.UnknownFieldException;
 import hu.ak_akademia.spring_boot_rest.repository.api.AnimalRepository;
+import hu.ak_akademia.spring_boot_rest.service.api.AnimalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.Validator;
 
+import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
 @Service
-public class AnimalServiceImpl implements hu.ak_akademia.spring_boot_rest.service.api.AnimalService {
+public class AnimalServiceImpl implements AnimalService {
     private AnimalRepository animalRepository;
     private Validator validator;
 
@@ -61,6 +63,11 @@ public class AnimalServiceImpl implements hu.ak_akademia.spring_boot_rest.servic
     }
 
     @Override
+    public List<Animal> fetchAll() {
+        return animalRepository.fetchAll();
+    }
+
+    @Override
     public void delete(final Integer id) {
         animalRepository.delete(id);
     }
@@ -68,7 +75,6 @@ public class AnimalServiceImpl implements hu.ak_akademia.spring_boot_rest.servic
     private void validateFields(final AnimalUpdateDto animalUpdateDto) {
         final BeanPropertyBindingResult beanPropertyBindingResult = new BeanPropertyBindingResult(animalUpdateDto, "animalUpdateDto");
         validator.validate(animalUpdateDto, beanPropertyBindingResult);
-
         if (beanPropertyBindingResult.hasErrors()) {
             throw new InputValidationException(beanPropertyBindingResult);
         }

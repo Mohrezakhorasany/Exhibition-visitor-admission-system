@@ -1,6 +1,7 @@
 package hu.ak_akademia.spring_boot_rest.repository;
 
 import hu.ak_akademia.spring_boot_rest.domain.entity.Animal;
+import hu.ak_akademia.spring_boot_rest.repository.api.AnimalRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -9,11 +10,12 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 @Repository
-public class AnimalRepositoryImpl implements hu.ak_akademia.spring_boot_rest.repository.api.AnimalRepository {
+public class AnimalRepositoryImpl implements AnimalRepository {
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     private final SimpleJdbcInsert simpleJdbcInsert;
 
@@ -79,6 +81,19 @@ public class AnimalRepositoryImpl implements hu.ak_akademia.spring_boot_rest.rep
         } catch (final EmptyResultDataAccessException e) {
             return Optional.empty();
         }
+    }
+
+    @Override
+    public List<Animal> fetchAll() {
+        return namedParameterJdbcTemplate.query("""
+                        SELECT animal_id AS id,
+                               animal_name AS name,
+                               animal_classes AS classType,
+                               animal_eating_type AS eatingType,
+                               animal_skin_type AS skinType
+                        FROM zoo.animal
+                        """,
+                BeanPropertyRowMapper.newInstance(Animal.class));
     }
 
 }

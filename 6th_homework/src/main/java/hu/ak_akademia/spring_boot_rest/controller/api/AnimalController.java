@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 import static javax.servlet.http.HttpServletResponse.*;
@@ -23,6 +24,14 @@ import static javax.servlet.http.HttpServletResponse.*;
 @Validated
 public interface AnimalController {
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation("Returns all animals resources.")
+    @ApiResponses({
+            @ApiResponse(code = SC_OK, message = "Animal returned", responseContainer = "List", response = AnimalOutputDto.class),
+            @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
+    })
+    ResponseEntity<List<AnimalOutputDto>> fetchAll();
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Saves animal.")
     @ApiResponses({
@@ -30,6 +39,7 @@ public interface AnimalController {
             @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
     })
     ResponseEntity<?> save(@Valid @RequestBody AnimalInputDto animalInputDto);
+
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Returns animal by id.")
