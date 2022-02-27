@@ -19,8 +19,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 @Service
 public class AnimalServiceImpl implements AnimalService {
-    private AnimalRepository animalRepository;
-    private Validator validator;
+    private final AnimalRepository animalRepository;
+    private final Validator validator;
 
     private static AnimalUpdateDto mapToUpdateDto(final Map<String, Object> parametersToUpdate, final Animal animalFromTheDatabase) {
         final AnimalUpdateDto animalUpdateDto = new AnimalUpdateDto(animalFromTheDatabase);

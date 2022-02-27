@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -19,9 +18,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import javax.sql.DataSource;
 
 @Data
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {
+        "hu.ak_akademia.spring_boot_rest.controller",
+        "hu.ak_akademia.spring_boot_rest.service",
+        "hu.ak_akademia.spring_boot_rest.repository",
+        "hu.ak_akademia.spring_boot_rest.ascpects"
+})
 @EnableSwagger2
-@EnableTransactionManagement
+
 public class Application {
     public static void main(final String[] args) {
         SpringApplication.run(Application.class, args);

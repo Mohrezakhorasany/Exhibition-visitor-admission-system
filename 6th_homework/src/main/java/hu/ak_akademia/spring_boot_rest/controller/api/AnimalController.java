@@ -20,7 +20,7 @@ import java.util.Map;
 import static javax.servlet.http.HttpServletResponse.*;
 
 @Api(tags = "Animal Controller")
-@RequestMapping("/animal")
+@RequestMapping("/animals")
 @Validated
 public interface AnimalController {
 
