@@ -3,8 +3,6 @@ package hu.ak.academy.spring.spring_boot.controller;
 import hu.ak.academy.spring.spring_boot.controller.api.CarController;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping(path = "/cars")
-@RestController
 public class CarControllerImpl implements CarController {
 
     @GetMapping

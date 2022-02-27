@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    username: postgres
+    password: admin
+    url: jdbc:postgresql://localhost:5434/postgres
+  sql:
+    init:
+      data-locations:
+        - classpath:schema.sql
+        - classpath:data.sql
+      mode: always
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+application:
+  version: '@project.version@'
+  name: '@project.artifactId@'

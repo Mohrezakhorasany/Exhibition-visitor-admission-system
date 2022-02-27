@@ -15,6 +15,7 @@
         <module name="Spring bean lifecycle" />
         <module name="Spring Boot REST endpoints" />
         <module name="test-application" />
+        <module name="Spring Boot REST Application" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
