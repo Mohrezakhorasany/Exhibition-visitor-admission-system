@@ -6,8 +6,7 @@ spring:
   sql:
     init:
       data-locations:
-        - classpath:schema.sql
-        - classpath:data.sql
+        - classpath:schema.psql
       mode: always
 server:
   error:

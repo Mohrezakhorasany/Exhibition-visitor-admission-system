@@ -26,7 +26,6 @@ public class Application {
     public static void main(final String[] args) {
         SpringApplication.run(Application.class, args);
     }
-    
 
     @Bean
     public Docket docket(@Value("${application.name}") final String name,
