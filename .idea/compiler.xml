@@ -13,6 +13,7 @@
         <module name="Spring bean management" />
         <module name="Spring autowiring" />
         <module name="Spring bean lifecycle" />
+        <module name="spring_data_jpa_Entities" />
         <module name="Spring Boot REST endpoints" />
         <module name="test-application" />
         <module name="Spring Boot REST Application" />
@@ -22,11 +23,14 @@
       <module name="1st maven homework" target="17" />
       <module name="Bean creation" target="17" />
       <module name="parent-pom" target="17" />
+      <module name="Spring Data JPA - Entities" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring Boot REST endpoints" options="-parameters" />
+      <module name="Spring Data JPA - Entities" options="-parameters" />
+      <module name="spring_data_jpa_Entities" options="-parameters" />
     </option>
   </component>
 </project>
