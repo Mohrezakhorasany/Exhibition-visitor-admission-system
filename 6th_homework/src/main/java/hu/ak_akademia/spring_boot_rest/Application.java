@@ -22,7 +22,7 @@ import javax.sql.DataSource;
         "hu.ak_akademia.spring_boot_rest.controller",
         "hu.ak_akademia.spring_boot_rest.service",
         "hu.ak_akademia.spring_boot_rest.repository",
-        "hu.ak_akademia.spring_boot_rest.ascpects"
+        "hu.ak_akademia.spring_boot_rest.aspects"
 })
 @EnableSwagger2
 

@@ -38,8 +38,8 @@ public class AnimalRepositoryImpl implements AnimalRepository {
                 Map.of("id", animal.getId(),
                         "name", animal.getName(),
                         "classType", animal.getClassType(),
-                        "age", animal.getEatingType(),
-                        "address", animal.getSkinType()));
+                        "eatingType", animal.getEatingType(),
+                        "skinType", animal.getSkinType()));
 
     }
 
