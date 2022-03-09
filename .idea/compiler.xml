@@ -17,6 +17,7 @@
         <module name="Spring Boot REST endpoints" />
         <module name="test-application" />
         <module name="Spring Boot REST Application" />
+        <module name="Spring Data JPA - Entity" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +31,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring Boot REST endpoints" options="-parameters" />
       <module name="Spring Data JPA - Entities" options="-parameters" />
+      <module name="Spring Data JPA - Entity" options="-parameters" />
       <module name="spring_data_jpa_Entities" options="-parameters" />
     </option>
   </component>
