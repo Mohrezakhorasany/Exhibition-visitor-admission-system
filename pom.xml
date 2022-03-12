@@ -107,6 +107,7 @@
         <module>6th_homework</module>
         <module>Spring Data JPA - Entity</module>
         <module>Spring Data JPA - Entities</module>
+        <module>Spring Data JPA - CRUD</module>
     </modules>
 
 </project>

@@ -14,6 +14,7 @@
         <module name="Spring autowiring" />
         <module name="Spring bean lifecycle" />
         <module name="spring_data_jpa_Entities" />
+        <module name="Spring Data JPA - CRUD" />
         <module name="Spring Boot REST endpoints" />
         <module name="test-application" />
         <module name="Spring Boot REST Application" />
@@ -30,6 +31,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Spring Boot REST endpoints" options="-parameters" />
+      <module name="Spring Data JPA - CRUD" options="-parameters" />
       <module name="Spring Data JPA - Entities" options="-parameters" />
       <module name="Spring Data JPA - Entity" options="-parameters" />
       <module name="spring_data_jpa_Entities" options="-parameters" />
