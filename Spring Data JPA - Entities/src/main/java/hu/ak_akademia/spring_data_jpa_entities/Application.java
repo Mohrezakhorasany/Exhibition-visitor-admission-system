@@ -1,9 +1,9 @@
-package hu.ak_akademia.sping_data_jpa;
+package hu.ak_akademia.spring_data_jpa_entities;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "hu.a_k.akademia.webfejlesztes.springboot.data.jpa.repository")
+@SpringBootApplication(scanBasePackages = "hu.ak_akademia.spring_data_jpa_entities.repository")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

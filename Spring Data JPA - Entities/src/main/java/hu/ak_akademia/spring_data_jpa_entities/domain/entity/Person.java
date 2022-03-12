@@ -1,4 +1,4 @@
-package hu.ak_akademia.sping_data_jpa.domain.entity;
+package hu.ak_akademia.spring_data_jpa_entities.domain.entity;
 
 import org.hibernate.annotations.Check;
 

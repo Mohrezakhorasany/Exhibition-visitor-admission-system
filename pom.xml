@@ -105,6 +105,8 @@
         <module>4th_homework/Spring Access Data JDBC</module>
         <module>5th_homework/Spring Boot REST endpoints</module>
         <module>6th_homework</module>
+        <module>Spring Data JPA - Entity</module>
+        <module>Spring Data JPA - Entities</module>
     </modules>
 
 </project>

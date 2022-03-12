@@ -1,6 +1,4 @@
-package hu.ak_akademia_jpa.domain.entity;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package hu.ak_akademia_jpa_entity.domain.entity;
 
 import javax.persistence.*;
 import java.util.Calendar;
@@ -22,8 +20,7 @@ public class Car {
     private FuelType fuelType;
     @Transient
     private boolean resold;
-    @Autowired
     @Embedded
-    private safetyTest safetyTest;
+    private SafetyTest safetyTest;
 
 }

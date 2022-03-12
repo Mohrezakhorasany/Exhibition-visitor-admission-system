@@ -1,9 +1,9 @@
-package hu.ak_akademia_jpa.domain.entity;
+package hu.ak_akademia_jpa_entity.domain.entity;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class safetyTest {
+public class SafetyTest {
     private boolean passed;
 
 }
