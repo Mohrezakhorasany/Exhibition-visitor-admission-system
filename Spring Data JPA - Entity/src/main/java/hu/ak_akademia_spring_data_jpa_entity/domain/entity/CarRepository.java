@@ -1,4 +1,4 @@
-package hu.ak_akademia_jpa_entity.domain.entity;
+package hu.ak_akademia_spring_data_jpa_entity.domain.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
