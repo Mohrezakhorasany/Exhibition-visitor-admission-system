@@ -1,29 +1,35 @@
-package hu.ak_akademia_spring_data_jpa_crud.domain.dto.output;
+package hu.ak_akademia_spring_data_jpa_crud.domain.dto.input;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import hu.ak_akademia_spring_data_jpa_crud.domain.entity.Participant;
 import lombok.Data;
+import lombok.Setter;
 
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 @Data
-public class ParticipantOutputDto {
-    @JsonProperty
+public class ParticipantUpdateDto {
+
+    @Positive
+    @Setter
     private final Integer id;
-    @JsonProperty
+    @NotEmpty
     private final String fullName;
-    @JsonProperty
+    @Email
+    @NotNull
     private final String email;
-    @JsonProperty
+    @NotEmpty
+    @NotNull
     private final String company;
-    @JsonProperty
+    @PastOrPresent
     private final LocalDateTime admittedDate;
 
-    public ParticipantOutputDto(final Participant participant) {
+    public ParticipantUpdateDto(final Participant participant) {
         id = participant.getId();
         fullName = participant.getFullName();
         email = participant.getEmail();
         company = participant.getCompany();
         admittedDate = participant.getAdmittedDate();
     }
+
 }

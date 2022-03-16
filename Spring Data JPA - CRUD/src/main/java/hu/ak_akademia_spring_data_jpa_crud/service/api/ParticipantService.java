@@ -2,19 +2,17 @@ package hu.ak_akademia_spring_data_jpa_crud.service.api;
 
 import hu.ak_akademia_spring_data_jpa_crud.domain.entity.Participant;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 public interface ParticipantService {
-    Participant save(@NotNull Participant participant);
+    Participant save(Participant participant);
 
-    Optional<Participant> findById(@NotNull @Positive Integer id);
+    Participant findById(Integer id);
 
     List<Participant> findAll();
 
-    Participant update(@NotNull Participant participant);
+    void update(final Integer id, final Map<String, Object> parametersToUpdate);
 
-    void delete(@NotNull Integer id);
+    void delete(Integer id);
 }

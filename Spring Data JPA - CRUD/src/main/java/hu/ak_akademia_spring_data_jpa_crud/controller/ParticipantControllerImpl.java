@@ -5,18 +5,15 @@ import hu.ak_akademia_spring_data_jpa_crud.domain.dto.output.ParticipantOutputDt
 import hu.ak_akademia_spring_data_jpa_crud.domain.entity.Participant;
 import hu.ak_akademia_spring_data_jpa_crud.service.api.ParticipantService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 public class ParticipantControllerImpl implements hu.ak_akademia_spring_data_jpa_crud.controller.api.ParticipantController {
-    @Autowired
     private ParticipantService participantService;
 
     @Override
@@ -37,8 +34,8 @@ public class ParticipantControllerImpl implements hu.ak_akademia_spring_data_jpa
 
     @Override
     public ResponseEntity<ParticipantOutputDto> findById(final Integer id) {
-        final Optional<Participant> participant = participantService.findById(id);
-        return participant.map(value -> ResponseEntity.ok(new ParticipantOutputDto(value))).orElseGet(() -> ResponseEntity.notFound().build());
+        final Participant participant = participantService.findById(id);
+        return ResponseEntity.ok(new ParticipantOutputDto(participant));
     }
 
     @Override
@@ -50,7 +47,7 @@ public class ParticipantControllerImpl implements hu.ak_akademia_spring_data_jpa
     }
 
     @Override
-    public ResponseEntity<?> update(final ParticipantInputDto ParticipantInputDto) {
+    public ResponseEntity<?> update(final Integer id, final ParticipantInputDto ParticipantInputDto) {
         return save(ParticipantInputDto);
     }
 

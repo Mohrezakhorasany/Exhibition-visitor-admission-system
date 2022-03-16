@@ -22,11 +22,12 @@ import static javax.servlet.http.HttpServletResponse.*;
 @Validated
 public interface ParticipantController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation("Adds a participant.")
     @ApiResponses({
             @ApiResponse(code = SC_OK, message = "Participant returned", responseContainer = "List", response = ParticipantOutputDto.class),
             @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
     })
-    ResponseEntity<?> save(@Valid @RequestBody ParticipantInputDto ParticipantInputDto);
+    ResponseEntity<?> save(@Valid @RequestBody final ParticipantInputDto ParticipantInputDto);
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Returns participant by id.")
@@ -35,7 +36,7 @@ public interface ParticipantController {
             @ApiResponse(code = SC_NOT_FOUND, message = "Person not found", response = ExceptionOutputDto.class),
             @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
     })
-    ResponseEntity<ParticipantOutputDto> findById(Integer id);
+    ResponseEntity<ParticipantOutputDto> findById(final Integer id);
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Returns all participants resources.")
@@ -46,8 +47,21 @@ public interface ParticipantController {
     ResponseEntity<List<ParticipantOutputDto>> findAll();
 
     @PatchMapping(path = "/{id}")
-    ResponseEntity<?> update(ParticipantInputDto ParticipantInputDto);
+    @ApiOperation("updates given id participant by given parameters.")
+    @ApiResponses({
+            @ApiResponse(code = SC_OK, message = "Participant updated", response = ParticipantOutputDto.class),
+            @ApiResponse(code = SC_NOT_FOUND, message = "Participant not found", response = ExceptionOutputDto.class),
+            @ApiResponse(code = SC_NO_CONTENT, message = "Participant was already updated.", response = ExceptionOutputDto.class),
+            @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
+    })
+    ResponseEntity<?> update(@PathVariable final Integer id, final ParticipantInputDto ParticipantInputDto);
 
     @DeleteMapping(path = "/{id}")
+    @ApiOperation("Deletes participant by id.")
+    @ApiResponses({
+            @ApiResponse(code = SC_OK, message = "Participant deleted", response = ParticipantOutputDto.class),
+            @ApiResponse(code = SC_NOT_FOUND, message = "Participant not found", response = ExceptionOutputDto.class),
+            @ApiResponse(code = SC_INTERNAL_SERVER_ERROR, message = "Internal Server Error", response = ExceptionOutputDto.class)
+    })
     ResponseEntity<?> delete(Integer id);
 }
