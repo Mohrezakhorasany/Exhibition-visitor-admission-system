@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @Entity
-@Table(name = "Participants")
+@Table(name = "participants")
 public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
