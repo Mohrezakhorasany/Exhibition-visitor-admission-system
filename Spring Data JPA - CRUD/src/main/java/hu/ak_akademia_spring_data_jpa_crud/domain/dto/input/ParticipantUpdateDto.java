@@ -12,17 +12,17 @@ public class ParticipantUpdateDto {
 
     @Positive
     @Setter
-    private final Integer id;
+    private Integer id;
     @NotEmpty
-    private final String fullName;
+    private String fullName;
     @Email
     @NotNull
-    private final String email;
+    private String email;
     @NotEmpty
     @NotNull
-    private final String company;
+    private String company;
     @PastOrPresent
-    private final LocalDateTime admittedDate;
+    private LocalDateTime admittedDate;
 
     public ParticipantUpdateDto(final Participant participant) {
         id = participant.getId();
