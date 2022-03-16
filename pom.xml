@@ -21,7 +21,7 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <spring-context.version>5.3.9</spring-context.version>
         <slf4j-api.version>1.7.32</slf4j-api.version>
-        <postgresql.version>42.3.1</postgresql.version>
+        <postgresql.version>42.3.3</postgresql.version>
         <slf4j-simple.version>1.7.32</slf4j-simple.version>
         <spring-boot-starter-parent.version.version>2.5.4</spring-boot-starter-parent.version.version>
     </properties>
