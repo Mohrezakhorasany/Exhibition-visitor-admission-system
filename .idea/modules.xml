@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Exhibition-visitor-admission-system.iml" filepath="$PROJECT_DIR$/.idea/Exhibition-visitor-admission-system.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Participant Dir/Participant/participant.iml" filepath="$PROJECT_DIR$/Participant Dir/Participant/participant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QR code/QR Code/QR Code.iml" filepath="$PROJECT_DIR$/QR code/QR Code/QR Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Participant/Participant/participant.iml" filepath="$PROJECT_DIR$/Participant/Participant/participant.iml" />
     </modules>
   </component>
 </project>
