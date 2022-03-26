@@ -1,0 +1,7 @@
+com\m\reza\khorasany\service\property\PropertyReader.class
+com\m\reza\khorasany\domain\entity\QRCode.class
+com\m\reza\khorasany\service\generator\Generation.class
+com\m\reza\khorasany\domain\entity\QRCode$QRCodeBuilder.class
+com\m\reza\khorasany\service\file\FileWriter.class
+com\m\reza\khorasany\service\reader\Reader.class
+com\m\reza\khorasany\Test.class

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.awt.image.BufferedImage;
 
-@Service
 public class Generation {
 
     private static final int WIDTH = 200;
